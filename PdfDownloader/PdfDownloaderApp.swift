@@ -12,6 +12,7 @@ struct PdfDownloaderApp: App {
     var body: some Scene {
         WindowGroup {
             PdfDownloadView()
+                .preferredColorScheme(.dark)
         }
     }
 }

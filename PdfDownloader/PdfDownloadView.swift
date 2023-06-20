@@ -7,11 +7,10 @@
 
 import SwiftUI
 
-
 struct PdfDownloadView: View {
-    @ObservedObject var vm = PDFDownloadViewModel()
-    let arrayPrueba = ["uno", "dos", "tres", "uno", "dos", "tres", "uno", "dos", "tres", "uno", "dos", "tres"]
+    @ObservedObject var vm = PDFDownloadVM()
     
+       
     var body: some View {
         VStack {
             Text(Strings.HomeStrings.mainTitle.rawValue.localize)
@@ -29,20 +28,19 @@ struct PdfDownloadView: View {
             TextField("Insert name to save PDF", text: $vm.pdfName)
                 .textFieldStyle(.roundedBorder)
             Button {
-                vm.downloadPDF()
+                vm.getPDF()
             } label: {
                 Text("Download PDF")
             }
             .buttonStyle(.borderedProminent)
             .padding()
-            List(arrayPrueba, id: \.self) { item in // asignamos nosotros el id
+            List(vm.pdfArray, id: \.self) { item in // asignamos nosotros el id
                 Button(item) {
                     
                 }
             }
             Spacer()
-            
-            
+
         }
         .alert("NO CAMPOS VACIOS", isPresented: $vm.alertPresented) {
             
@@ -56,5 +54,6 @@ struct PdfDownloadView: View {
 struct PdfDownloadView_Previews: PreviewProvider {
     static var previews: some View {
         PdfDownloadView()
+            .preferredColorScheme(.dark)
     }
 }
