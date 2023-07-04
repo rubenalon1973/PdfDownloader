@@ -13,16 +13,22 @@ final class PDFDownloadVM: ObservableObject {
     @Published var textFieldText = ""
     @Published var pdfName = ""
     @Published var alertPresented = false
+    @Published var errorAlertPresented = false
     @Published var pdfArray:[String] = []
+    @Published var selectedPDF = ""
     @Published var errorMessage = ""
+    
+    init() {
+        recoverAllPdfs()
+    }
     
     //    @MainActor
     func getPDF() {
         guard !textFieldText.isEmpty,
               !pdfName.isEmpty,
               let pdfURl = URL(string: textFieldText) else {
-            errorMessage = "No puede haber campos vacíos"
-            alertPresented.toggle()
+            errorMessage = "There can be no empty fields"
+            errorAlertPresented.toggle()
             return
         }
         
@@ -31,11 +37,12 @@ final class PDFDownloadVM: ObservableObject {
                 try await persistence.downloadPdf(url: pdfURl, pdfName: pdfName)
                 await MainActor.run {//para acotar aún más el main actor
                     pdfArray.append(pdfName + ".pdf")
+                    alertPresented.toggle()
                 }
             } catch let error as DownloadErrors {
                 await MainActor.run {
                     errorMessage = error.rawValue
-                    alertPresented = true
+                    errorAlertPresented = true
                 }
             } catch {
                 await MainActor.run {
@@ -43,6 +50,31 @@ final class PDFDownloadVM: ObservableObject {
                 }
             }
         }
+    }
+    
+    func recoverAllPdfs() {
+        guard let documentsURL = persistence.getDocumentDirectory() else { return }
+        
+        do {
+            let document = try FileManager.default.contentsOfDirectory(atPath: documentsURL.path())
+                .sorted()
+                .dropFirst()
+            pdfArray.append(contentsOf: document)
+        } catch {
+            pdfArray = []
+        }
+    }
+    
+    func getFileURLDocumentsDirectory() -> URL? {
+        guard let documentsDirectory = persistence.getDocumentDirectory() else { return nil }
+        
+        let fileURL = documentsDirectory.appendingPathComponent(selectedPDF) //urlDocuments.AAA.pdf
+        return fileURL
+    }
+    
+    func cleanFields() {
+        textFieldText = ""
+        pdfName = ""
     }
 }
 

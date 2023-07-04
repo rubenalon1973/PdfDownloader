@@ -19,8 +19,16 @@ final class PdfPersistence {
     
     private init(){}
     
-    private func getDocumentDirectory() -> URL? {
+    func getDocumentDirectory() -> URL? {
         FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first
+    }
+    
+    func downloadPDF(url: URL) async throws -> (URL, URLResponse) {
+        do {
+            return try await URLSession.shared.download(from: url)
+        } catch {
+            throw DownloadErrors.noURLFound
+        }
     }
     
     func downloadPdf(url: URL, pdfName: String) async throws {
@@ -28,29 +36,23 @@ final class PdfPersistence {
         guard let documentDirectoryURL = getDocumentDirectory() else { throw DownloadErrors.noURLFound }
         
         let destinationURL = documentDirectoryURL.appendingPathComponent(pdfName, conformingTo: .pdf)
+        let (tempURL, response) = try await URLSession.shared.download(from: url)
         
+        guard let urlResponse = response as? HTTPURLResponse else { return }
         
-        do {
-            let (tempURL, response) = try await URLSession.shared.download(from: url)
-            guard let urlResponse = response as? HTTPURLResponse else { return }
-            
-            switch urlResponse.statusCode {
-            case 200...299:
-                do {
-                    try FileManager.default.moveItem(at: tempURL, to: destinationURL)
-                    print("Archivo guarda en: \(destinationURL)")
-                } catch {
-                    print("Error al guardar el archivo: \(error)")
-                    throw DownloadErrors.pdfNameAlreadyExist
-                }
-            case 400...450:
-                throw DownloadErrors.noURLFound
-            default:
-                throw DownloadErrors.genericError
+        switch urlResponse.statusCode {
+        case 200...299:
+            do {
+                try FileManager.default.moveItem(at: tempURL, to: destinationURL)
+                print("Archivo guarda en: \(destinationURL)")
+            } catch {
+                print("Error al guardar el archivo: \(error)")
+                throw DownloadErrors.pdfNameAlreadyExist
             }
-        } catch {
-            //            print(error)
-            throw DownloadErrors.invalidURL
+        case 400...450:
+            throw DownloadErrors.noURLFound
+        default:
+            throw DownloadErrors.genericError
         }
     }
 }

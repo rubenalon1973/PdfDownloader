@@ -6,11 +6,13 @@
 //
 
 import SwiftUI
+//MARK: Url example https://www.pdf995.com/samples/pdf.pdf
+
 
 struct PdfDownloadView: View {
     @ObservedObject var vm = PDFDownloadVM()
+    @State var showPDF = false
     
-       
     var body: some View {
         VStack {
             Text(Strings.HomeStrings.mainTitle.rawValue.localize)
@@ -22,10 +24,10 @@ struct PdfDownloadView: View {
             //            mirar texfield book masterview y cambiar formatos
             TextField("Insert URL", text: $vm.textFieldText)
                 .textFieldStyle(.roundedBorder)
-            Text(Strings.HomeStrings.insertUrl.rawValue.localize)
+            Text(Strings.HomeStrings.insertName.rawValue.localize)
                 .font(.headline)
             //            mirar texfield book masterview y cambiar formatos
-            TextField("Insert name to save PDF", text: $vm.pdfName)
+            TextField("Insert name", text: $vm.pdfName)
                 .textFieldStyle(.roundedBorder)
             Button {
                 vm.getPDF()
@@ -36,17 +38,31 @@ struct PdfDownloadView: View {
             .padding()
             List(vm.pdfArray, id: \.self) { item in // asignamos nosotros el id
                 Button(item) {
-                    
+                    vm.selectedPDF = item
+                    showPDF.toggle()
                 }
             }
             Spacer()
 
         }
-        .alert("NO CAMPOS VACIOS", isPresented: $vm.alertPresented) {
+        .alert("Something went wrong", isPresented: $vm.errorAlertPresented) {
             
         } message: {
-            Text("No puede haber campos vacíos, cumplimentelos")
+            Text(vm.errorMessage)
         }
+        .alert("PDF Descargado", isPresented: $vm.alertPresented) {
+            Button("Visualize") {
+                vm.selectedPDF = "\(vm.pdfName).pdf"
+                showPDF.toggle()
+            }
+        } message: {
+            Text("Want to open the pdf file now?")
+        }
+        .sheet(isPresented: $showPDF, content: {
+            if let getFileURL = vm.getFileURLDocumentsDirectory() {
+                PDFKitView(url: getFileURL)
+            }
+        })
          .padding()
     }
 }

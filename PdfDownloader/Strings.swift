@@ -18,6 +18,7 @@ struct Strings {
     enum HomeStrings: String {
         case mainTitle = "Home_Title"
         case insertUrl = "Home_Insert"
+        case insertName = "Home_Insert_Name"
         case downloadPdf = "Home_Download"
     }
 }
