@@ -6,4 +6,12 @@
 "Home_Title" = "PDF DOWNLOADER";
 "Home_Insert" = "Introduzca la URL del PDF a descargar";
 "Home_Insert_Name" = "Introduzca el nombre del PDF";
+"Home_Texfield_Url" = "Introduzca URL";
+"Home_Texfield_Name" = "Introduzca nombre";
+"Home_Download_Pdf" = "Descarga PDF";
+"Home_Alert_Wrong" = "Algo ha ido mal";
+"Home_Alert_DownloadPdf" = "PDF descargado";
+"Home_Button_Visualize" = "Visualizar";
+"Home_Text_OpenFile" = "¿Quiere abrir el archivo pdf ahora?";
+
 

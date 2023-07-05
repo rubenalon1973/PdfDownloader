@@ -22,17 +22,17 @@ struct PdfDownloadView: View {
             Text(Strings.HomeStrings.insertUrl.rawValue.localize)
                 .font(.headline)
             //            mirar texfield book masterview y cambiar formatos
-            TextField("Insert URL", text: $vm.textFieldText)
+            TextField(Strings.HomeStrings.texfieldInsertUrl.rawValue.localize, text: $vm.textFieldText)
                 .textFieldStyle(.roundedBorder)
             Text(Strings.HomeStrings.insertName.rawValue.localize)
                 .font(.headline)
-            //            mirar texfield book masterview y cambiar formatos
-            TextField("Insert name", text: $vm.pdfName)
+            //            mirar textfield book masterview y cambiar formatos
+            TextField(Strings.HomeStrings.texfieldInsertName.rawValue.localize, text: $vm.pdfName)
                 .textFieldStyle(.roundedBorder)
             Button {
                 vm.getPDF()
             } label: {
-                Text("Download PDF")
+                Text(Strings.HomeStrings.downloadPdf.rawValue.localize)
             }
             .buttonStyle(.borderedProminent)
             .padding()
@@ -45,18 +45,18 @@ struct PdfDownloadView: View {
             Spacer()
 
         }
-        .alert("Something went wrong", isPresented: $vm.errorAlertPresented) {
+        .alert(Strings.HomeStrings.alertWrong.rawValue.localize, isPresented: $vm.errorAlertPresented) {
             
         } message: {
             Text(vm.errorMessage)
         }
-        .alert("PDF Descargado", isPresented: $vm.alertPresented) {
-            Button("Visualize") {
+        .alert(Strings.HomeStrings.alertDownloadPdf.rawValue.localize, isPresented: $vm.alertPresented) {
+            Button(Strings.HomeStrings.buttonVisualize.rawValue.localize) {
                 vm.selectedPDF = "\(vm.pdfName).pdf"
                 showPDF.toggle()
             }
         } message: {
-            Text("Want to open the pdf file now?")
+            Text(Strings.HomeStrings.textOpenFile.rawValue.localize)
         }
         .sheet(isPresented: $showPDF, content: {
             if let getFileURL = vm.getFileURLDocumentsDirectory() {
