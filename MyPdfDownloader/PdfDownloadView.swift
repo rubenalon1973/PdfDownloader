@@ -25,7 +25,6 @@ struct PdfDownloadView: View {
                 .font(.headline)
             TextField(Strings.HomeStrings.texfieldInsertUrl.rawValue.localize, text: $vm.textFieldText)
                 .textFieldStyle(.roundedBorder)
-            //                .padding(.horizontal)
                 .multilineTextAlignment(.center)
                 .overlay {
                     RoundedRectangle(cornerRadius: 10)
@@ -35,7 +34,6 @@ struct PdfDownloadView: View {
                 .font(.headline)
             TextField(Strings.HomeStrings.texfieldInsertName.rawValue.localize, text: $vm.pdfName)
                 .textFieldStyle(.roundedBorder)
-            //                .padding(.horizontal)
                 .multilineTextAlignment(.center)
                 .overlay {
                     RoundedRectangle(cornerRadius: 10)
@@ -48,7 +46,7 @@ struct PdfDownloadView: View {
             }
             .buttonStyle(.borderedProminent)
             .padding()
-            List(vm.pdfArray, id: \.self) { item in // asignamos nosotros el id
+            List(vm.pdfArray, id: \.self) { item in 
                 Button(item) {
                     vm.selectedPDF = item
                     showPDF.toggle()

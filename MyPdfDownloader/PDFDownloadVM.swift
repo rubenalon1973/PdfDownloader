@@ -22,7 +22,6 @@ final class PDFDownloadVM: ObservableObject {
         recoverAllPdfs()
     }
     
-    //    @MainActor
     func getPDF() {
         guard !textFieldText.isEmpty,
               !pdfName.isEmpty,
@@ -35,7 +34,7 @@ final class PDFDownloadVM: ObservableObject {
         Task {
             do {
                 try await persistence.downloadPdf(url: pdfURl, pdfName: pdfName)
-                await MainActor.run {//para acotar aún más el main actor
+                await MainActor.run {
                     pdfArray.append(pdfName + ".pdf")
                     alertPresented.toggle()
                 }

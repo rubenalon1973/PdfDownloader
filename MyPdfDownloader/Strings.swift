@@ -10,7 +10,7 @@ import Foundation
 
 extension String {
     var localize: String {
-        return NSLocalizedString(self, comment: "")//lee string q hay en "localizable", y self es el texto elegido
+        return NSLocalizedString(self, comment: "")
     }
 }
 
