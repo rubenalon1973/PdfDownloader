@@ -160,12 +160,12 @@
 			};
 			buildConfigurationList = 80C248DA2A3EF37500A50033 /* Build configuration list for PBXProject "MyPdfDownloader" */;
 			compatibilityVersion = "Xcode 14.0";
-			developmentRegion = en;
+			developmentRegion = es;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
-				Base,
 				es,
+				Base,
 			);
 			mainGroup = 80C248D62A3EF37500A50033;
 			productRefGroup = 80C248E02A3EF37500A50033 /* Products */;
@@ -342,7 +342,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"PdfDownloader/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"MyPdfDownloader/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -370,7 +370,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"PdfDownloader/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"MyPdfDownloader/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;

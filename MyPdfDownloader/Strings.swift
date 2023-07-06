@@ -1,6 +1,6 @@
 //
 //  Strings.swift
-//  PdfDownloader
+//  MyPdfDownloader
 //
 //  Created by Ruben Alonso on 18/6/23.
 //
@@ -26,5 +26,6 @@ struct Strings {
         case alertDownloadPdf = "Home_Alert_DownloadPdf"
         case buttonVisualize = "Home_Button_Visualize"
         case textOpenFile = "Home_Text_OpenFile"
+        case errorMessage = "Home_Error_Message"
     }
 }

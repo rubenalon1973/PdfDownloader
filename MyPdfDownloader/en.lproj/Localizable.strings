@@ -1,6 +1,5 @@
 //poner siempre ;
 
-
 //HOME STRINGS
 
 "Home_Title" = "PDF DOWNLOADER";
@@ -13,3 +12,5 @@
 "Home_Alert_DownloadPdf" = "Download PDF";
 "Home_Button_Visualize" = "Visualize";
 "Home_Text_OpenFile" = "Want to open the pdf file now?";
+"Home_Error_Message" = "There can be no empty fields";
+

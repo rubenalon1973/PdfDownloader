@@ -1,6 +1,6 @@
 //
 //  PdfDownloadView.swift
-//  PdfDownloader
+//  MyPdfDownloader
 //
 //  Created by Ruben Alonso on 18/6/23.
 //
@@ -13,6 +13,7 @@ struct PdfDownloadView: View {
     @ObservedObject var vm = PDFDownloadVM()
     @State var showPDF = false
     
+    
     var body: some View {
         VStack(spacing: 20) {
             Text(Strings.HomeStrings.mainTitle.rawValue.localize)
@@ -24,7 +25,7 @@ struct PdfDownloadView: View {
                 .font(.headline)
             TextField(Strings.HomeStrings.texfieldInsertUrl.rawValue.localize, text: $vm.textFieldText)
                 .textFieldStyle(.roundedBorder)
-//                .padding(.horizontal)
+            //                .padding(.horizontal)
                 .multilineTextAlignment(.center)
                 .overlay {
                     RoundedRectangle(cornerRadius: 10)
@@ -34,7 +35,7 @@ struct PdfDownloadView: View {
                 .font(.headline)
             TextField(Strings.HomeStrings.texfieldInsertName.rawValue.localize, text: $vm.pdfName)
                 .textFieldStyle(.roundedBorder)
-//                .padding(.horizontal)
+            //                .padding(.horizontal)
                 .multilineTextAlignment(.center)
                 .overlay {
                     RoundedRectangle(cornerRadius: 10)
@@ -84,3 +85,5 @@ struct PdfDownloadView_Previews: PreviewProvider {
             .preferredColorScheme(.dark)
     }
 }
+
+

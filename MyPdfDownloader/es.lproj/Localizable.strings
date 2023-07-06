@@ -13,5 +13,6 @@
 "Home_Alert_DownloadPdf" = "PDF descargado";
 "Home_Button_Visualize" = "Visualizar";
 "Home_Text_OpenFile" = "¿Quiere abrir el archivo pdf ahora?";
+"Home_Error_Message" = "No puede haber campos vacíos";
 
 

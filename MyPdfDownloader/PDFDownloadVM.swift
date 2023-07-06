@@ -1,6 +1,6 @@
 //
 //  PDFDownloadVM.swift
-//  PdfDownloader
+//  MyPdfDownloader
 //
 //  Created by Ruben Alonso on 18/6/23.
 //
@@ -27,7 +27,7 @@ final class PDFDownloadVM: ObservableObject {
         guard !textFieldText.isEmpty,
               !pdfName.isEmpty,
               let pdfURl = URL(string: textFieldText) else {
-            errorMessage = "There can be no empty fields"
+            errorMessage = Strings.HomeStrings.errorMessage.rawValue.localize
             errorAlertPresented.toggle()
             return
         }
