@@ -4,7 +4,7 @@
 //HOME STRINGS
 
 "Home_Title" = "PDF DOWNLOADER";
-"Home_Insert" = "Insert PDF URL to download";
+"Home_Insert_Url" = "Insert URL to download PDF";
 "Home_Insert_Name" = "Insert name to save to PDF";
 "Home_Texfield_Url" = "Insert URL";
 "Home_Texfield_Name" = "Insert name";

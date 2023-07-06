@@ -4,7 +4,7 @@
 
 
 "Home_Title" = "PDF DOWNLOADER";
-"Home_Insert" = "Introduzca la URL del PDF a descargar";
+"Home_Insert_Url" = "Introduzca URL del PDF descargar";
 "Home_Insert_Name" = "Introduzca el nombre del PDF";
 "Home_Texfield_Url" = "Introduzca URL";
 "Home_Texfield_Name" = "Introduzca nombre";

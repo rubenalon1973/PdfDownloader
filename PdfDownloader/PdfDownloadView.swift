@@ -14,21 +14,32 @@ struct PdfDownloadView: View {
     @State var showPDF = false
     
     var body: some View {
-        VStack {
+        VStack(spacing: 20) {
             Text(Strings.HomeStrings.mainTitle.rawValue.localize)
                 .font(.largeTitle)
-                .bold()
+                .tracking(-3)
+                .foregroundColor(.accentColor)
                 .padding(.bottom, 100)
             Text(Strings.HomeStrings.insertUrl.rawValue.localize)
                 .font(.headline)
-            //            mirar texfield book masterview y cambiar formatos
             TextField(Strings.HomeStrings.texfieldInsertUrl.rawValue.localize, text: $vm.textFieldText)
                 .textFieldStyle(.roundedBorder)
+//                .padding(.horizontal)
+                .multilineTextAlignment(.center)
+                .overlay {
+                    RoundedRectangle(cornerRadius: 10)
+                        .stroke(.gray, lineWidth: 2)
+                }
             Text(Strings.HomeStrings.insertName.rawValue.localize)
                 .font(.headline)
-            //            mirar textfield book masterview y cambiar formatos
             TextField(Strings.HomeStrings.texfieldInsertName.rawValue.localize, text: $vm.pdfName)
                 .textFieldStyle(.roundedBorder)
+//                .padding(.horizontal)
+                .multilineTextAlignment(.center)
+                .overlay {
+                    RoundedRectangle(cornerRadius: 10)
+                        .stroke(.gray, lineWidth: 2)
+                }
             Button {
                 vm.getPDF()
             } label: {
@@ -43,7 +54,7 @@ struct PdfDownloadView: View {
                 }
             }
             Spacer()
-
+            
         }
         .alert(Strings.HomeStrings.alertWrong.rawValue.localize, isPresented: $vm.errorAlertPresented) {
             
@@ -63,7 +74,7 @@ struct PdfDownloadView: View {
                 PDFKitView(url: getFileURL)
             }
         })
-         .padding()
+        .padding()
     }
 }
 
