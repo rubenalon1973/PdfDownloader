@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		80B8D5B02A45E8CD0017F34E /* PDFKitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B8D5AF2A45E8CD0017F34E /* PDFKitView.swift */; };
-		80C248E32A3EF37500A50033 /* PdfDownloaderApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C248E22A3EF37500A50033 /* PdfDownloaderApp.swift */; };
+		80C248E32A3EF37500A50033 /* MyPdfDownloaderApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C248E22A3EF37500A50033 /* MyPdfDownloaderApp.swift */; };
 		80C248E52A3EF37500A50033 /* PdfDownloadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C248E42A3EF37500A50033 /* PdfDownloadView.swift */; };
 		80C248E72A3EF37600A50033 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 80C248E62A3EF37600A50033 /* Assets.xcassets */; };
 		80C248EA2A3EF37600A50033 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 80C248E92A3EF37600A50033 /* Preview Assets.xcassets */; };
@@ -20,8 +20,8 @@
 
 /* Begin PBXFileReference section */
 		80B8D5AF2A45E8CD0017F34E /* PDFKitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFKitView.swift; sourceTree = "<group>"; };
-		80C248DF2A3EF37500A50033 /* PdfDownloader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PdfDownloader.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		80C248E22A3EF37500A50033 /* PdfDownloaderApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PdfDownloaderApp.swift; sourceTree = "<group>"; };
+		80C248DF2A3EF37500A50033 /* MyPdfDownloader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyPdfDownloader.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		80C248E22A3EF37500A50033 /* MyPdfDownloaderApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPdfDownloaderApp.swift; sourceTree = "<group>"; };
 		80C248E42A3EF37500A50033 /* PdfDownloadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PdfDownloadView.swift; sourceTree = "<group>"; };
 		80C248E62A3EF37600A50033 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		80C248E92A3EF37600A50033 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -46,7 +46,7 @@
 		80C248D62A3EF37500A50033 = {
 			isa = PBXGroup;
 			children = (
-				80C248E12A3EF37500A50033 /* PdfDownloader */,
+				80C248E12A3EF37500A50033 /* MyPdfDownloader */,
 				80C248E02A3EF37500A50033 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -54,12 +54,12 @@
 		80C248E02A3EF37500A50033 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				80C248DF2A3EF37500A50033 /* PdfDownloader.app */,
+				80C248DF2A3EF37500A50033 /* MyPdfDownloader.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		80C248E12A3EF37500A50033 /* PdfDownloader */ = {
+		80C248E12A3EF37500A50033 /* MyPdfDownloader */ = {
 			isa = PBXGroup;
 			children = (
 				80C249002A409AAC00A50033 /* Persistence */,
@@ -71,7 +71,7 @@
 				80C248E62A3EF37600A50033 /* Assets.xcassets */,
 				80C248E82A3EF37600A50033 /* Preview Content */,
 			);
-			path = PdfDownloader;
+			path = MyPdfDownloader;
 			sourceTree = "<group>";
 		};
 		80C248E82A3EF37600A50033 /* Preview Content */ = {
@@ -94,7 +94,7 @@
 		80C248F12A3EF44A00A50033 /* System */ = {
 			isa = PBXGroup;
 			children = (
-				80C248E22A3EF37500A50033 /* PdfDownloaderApp.swift */,
+				80C248E22A3EF37500A50033 /* MyPdfDownloaderApp.swift */,
 			);
 			name = System;
 			sourceTree = "<group>";
@@ -126,9 +126,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		80C248DE2A3EF37500A50033 /* PdfDownloader */ = {
+		80C248DE2A3EF37500A50033 /* MyPdfDownloader */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 80C248ED2A3EF37600A50033 /* Build configuration list for PBXNativeTarget "PdfDownloader" */;
+			buildConfigurationList = 80C248ED2A3EF37600A50033 /* Build configuration list for PBXNativeTarget "MyPdfDownloader" */;
 			buildPhases = (
 				80C248DB2A3EF37500A50033 /* Sources */,
 				80C248DC2A3EF37500A50033 /* Frameworks */,
@@ -138,9 +138,9 @@
 			);
 			dependencies = (
 			);
-			name = PdfDownloader;
+			name = MyPdfDownloader;
 			productName = PdfDownloader;
-			productReference = 80C248DF2A3EF37500A50033 /* PdfDownloader.app */;
+			productReference = 80C248DF2A3EF37500A50033 /* MyPdfDownloader.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -158,7 +158,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 80C248DA2A3EF37500A50033 /* Build configuration list for PBXProject "PdfDownloader" */;
+			buildConfigurationList = 80C248DA2A3EF37500A50033 /* Build configuration list for PBXProject "MyPdfDownloader" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -172,7 +172,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				80C248DE2A3EF37500A50033 /* PdfDownloader */,
+				80C248DE2A3EF37500A50033 /* MyPdfDownloader */,
 			);
 		};
 /* End PBXProject section */
@@ -199,7 +199,7 @@
 				80C248FC2A3EFC0E00A50033 /* Strings.swift in Sources */,
 				80B8D5B02A45E8CD0017F34E /* PDFKitView.swift in Sources */,
 				80C248FF2A3F10CA00A50033 /* PDFDownloadVM.swift in Sources */,
-				80C248E32A3EF37500A50033 /* PdfDownloaderApp.swift in Sources */,
+				80C248E32A3EF37500A50033 /* MyPdfDownloaderApp.swift in Sources */,
 				80C249022A409ACB00A50033 /* PdfPersistence.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -394,7 +394,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		80C248DA2A3EF37500A50033 /* Build configuration list for PBXProject "PdfDownloader" */ = {
+		80C248DA2A3EF37500A50033 /* Build configuration list for PBXProject "MyPdfDownloader" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				80C248EB2A3EF37600A50033 /* Debug */,
@@ -403,7 +403,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		80C248ED2A3EF37600A50033 /* Build configuration list for PBXNativeTarget "PdfDownloader" */ = {
+		80C248ED2A3EF37600A50033 /* Build configuration list for PBXNativeTarget "MyPdfDownloader" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				80C248EE2A3EF37600A50033 /* Debug */,
